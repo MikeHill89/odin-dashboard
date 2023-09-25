@@ -23,21 +23,14 @@ input {
     ;
     height: 100svh;
 }
-h2{
-    padding: 0;
-    margin: 0;
-}
-
 header {
     grid-area: header;
     display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "usernotifications usernotifications"
         "toolbar toolbar"
     ;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     gap: 1rem;
     background-color: #E1EFE6;
 }
@@ -47,7 +40,6 @@ header .user-panel {
     display: grid;
     align-items: center;
     gap: 1rem;
-    ;
     grid-template-areas:
         "search notifications avatar"
     ;
@@ -137,10 +129,12 @@ nav {
     padding: 2rem 1rem 1rem 1rem;
     align-items: center;
 }
-.sticky-menu{
+
+.sticky-menu {
     position: sticky;
     top: 2rem;
 }
+
 nav ul {
     display: flex;
     align-items: center;
@@ -157,7 +151,10 @@ nav .logo {
     padding-bottom: 0.5rem
 }
 
-nav li:hover,nav a:hover,nav i:hover,nav.logo:hover {
+nav li:hover,
+nav a:hover,
+nav i:hover,
+nav.logo:hover {
     color: #E85D75;
 }
 
@@ -179,10 +176,11 @@ main {
         "projects"
         "sidebar"
     ;
-    grid-template-rows: 1fr auto ;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
 }
 
-.projects {
+.card-container {
     grid-area: projects;
     display: grid;
     gap: 1rem;
@@ -195,14 +193,16 @@ main {
     background-color: #AEB7B3;
 }
 
-footer{
+footer {
     grid-area: footer;
     padding: 1rem;
     height: auto;
     background-color: #AEB7B3;
     color: #E1EFE6;
 }
-
+.projects{
+    padding: 0rem;
+}
 .project-card {
     background-color: white;
     padding: 1rem;
@@ -228,46 +228,115 @@ footer{
     color: #ffffff;
     padding: 0.5rem;
 }
-.card-buttons button:hover{
+
+.card-buttons button:hover {
     background-color: #35CE8D;
     color: #1A1423;
 }
-.feature-card, .announcement-card{
-   background-color: white;
-   padding: 1rem;
-   border-radius: 10px;
+
+.feature-card,
+.announcement-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
 }
-.featured-user{
+
+.featured-user {
     display: grid;
     align-items: space-between;
     grid-template-columns: auto 1fr;
     padding: 0.5rem;
     justify-content: space-between;
-    grid-template-areas: 
-    "avatar username"
-    "avatar usertitle"
+    grid-template-areas:
+        "avatar username"
+        "avatar usertitle"
     ;
 }
-.featured-user .user-avatar{
+
+.featured-user .user-avatar {
     grid-area: avatar;
     padding-right: 0.5rem;
 }
-.featured-user .username{
+
+.featured-user .username {
     grid-area: username;
 }
-.featured-user .usertitle{
+
+.featured-user .usertitle {
     grid-area: usertitle;
     color: #888078;
     font-size: 0.8rem;
 }
-.announcement-title{
+
+.announcement-title {
     font-weight: bold;
 }
-.announcement-excerpt{
+
+.announcement-excerpt {
     font-size: 0.9rem;
     color: #888078;
 }
-hr{
+
+hr {
     border: 1px solid #888078;
     opacity: 0.2;
+}
+
+@media (min-width: 500px) {
+    header .toolbar {
+        justify-content: flex-end;
+    }
+    .user-panel {
+        grid-template-columns: 1fr 1fr auto auto;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .grid-wrapper{
+        height: 100dvh;
+    }
+    main {
+        grid-template-columns: 2fr max(240px);
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "content sidebar"
+        ;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        gap: 0rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto 1fr;
+    }
+    nav span{
+        display: inline-block;
+    }
+    nav ul{
+        align-items: flex-start;
+    }
+    nav ul li{
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        gap: 0.5rem;
+    }
+    .user-panel {
+        grid-template-columns: max(250px) 2fr auto auto;
+    }
+    .logo{
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
 }
