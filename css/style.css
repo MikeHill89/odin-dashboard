@@ -1,102 +1,273 @@
-body, html{
+body,
+html {
     padding: 0;
     margin: 0;
     border: 0;
+    height: auto;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
-.grid-wrapper{
+
+button,
+input {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.grid-wrapper {
     display: grid;
-    grid-template-columns:auto 1fr;
-    grid-template-rows: auto 1fr 1fr auto;
-    grid-template-areas: 
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
         "nav header"
-        "nav projects"
-        "nav sidebar"
+        "nav main"
         "nav footer"
     ;
+    height: 100svh;
 }
-header{
+h2{
+    padding: 0;
+    margin: 0;
+}
+
+header {
     grid-area: header;
     display: grid;
-    grid-template-areas: 
-        "usernotifications"
-        "searchbar"
-        "userinfo"
-        "toolbar"
-        ;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "usernotifications usernotifications"
+        "toolbar toolbar"
+    ;
+    padding: 1rem 1rem 1rem 1rem;
+    gap: 1rem;
+    background-color: #E1EFE6;
+}
+
+header .user-panel {
+    grid-area: usernotifications;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    ;
+    grid-template-areas:
+        "search notifications avatar"
+    ;
+}
+
+.user-avatar {
+    grid-area: avatar;
+    justify-self: end;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.user-notifications {
+    grid-area: notifications;
+    justify-self: end;
+}
+
+.user-notifications a {
+    color: #000411;
+}
+
+.user-notifications a:hover {
+    color: #E85D75;
+}
+
+.user-search {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
-    padding: 1rem;
-    background-color: blue;
+    flex: 1;
 }
-header input{
-    grid-area: searchbar;
-    border-radius: 10px;
+
+.user-search input {
+    border-radius: 0.5rem;
+    border: 1px solid white;
     padding: 0.5rem;
-    border: 0;
+    display: flex;
+    flex: 1;
+    color: #000411;
 }
-header .user-greeting{
-    grid-area: userinfo;
+
+.user-search input:focus {
+    outline: none;
+    border: 1px solid #000041;
 }
-header .toolbar{
+
+header .toolbar {
     grid-area: toolbar;
     display: flex;
     gap: 0.5rem;
     flex: 1;
     justify-content: space-between;
 }
-header .toolbar button{
+
+header .toolbar button {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
     flex: 1;
     border-radius: 10px;
     border: 0;
-    background-color: beige;
-    color: black;
-    padding: 0.5rem;
+    background-color: #EFCB68;
+    color: #000411;
+    padding: 1rem;
 }
-header .user-notifications{
-    grid-area: usernotifications;
+
+.toolbar button:hover {
+    background-color: #E85D75;
+    color: white;
 }
-nav{
+
+a {
+    text-decoration: none;
+}
+
+nav {
     grid-area: nav;
-    height: 100svh;
-    background-color: blueviolet;
+    background-color: #160C28;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     align-items: center;
 }
-nav ul{
+.sticky-menu{
+    position: sticky;
+    top: 2rem;
+}
+nav ul {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-nav li, nav .logo{
+
+nav li,
+nav .logo {
     color: white;
+    padding-bottom: 0.5rem
 }
-nav span{
+
+nav li:hover,nav a:hover,nav i:hover,nav.logo:hover {
+    color: #E85D75;
+}
+
+nav span {
     display: none;
 }
-nav hr{
+
+nav hr {
     width: 100%;
 }
-.projects{
+
+main {
+    grid-area: main;
+    background-color: #AEB7B3;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        "projects"
+        "sidebar"
+    ;
+    grid-template-rows: 1fr auto ;
+}
+
+.projects {
     grid-area: projects;
-    background-color: brown;
-    padding: 1rem;
+    display: grid;
+    gap: 1rem;
 }
-.sidebar{
-    grid-area:sidebar;
-    background-color: chocolate;
-    padding: 1rem;
+
+.sidebar {
+    grid-area: sidebar;
+    display: grid;
+    gap: 1rem;
+    background-color: #AEB7B3;
 }
+
 footer{
     grid-area: footer;
     padding: 1rem;
-    height: auto; 
-    background-color: darkturquoise;
+    height: auto;
+    background-color: #AEB7B3;
+    color: #E1EFE6;
+}
+
+.project-card {
+    background-color: white;
+    padding: 1rem;
+    border-left: 0.5rem solid #EFCB68;
+    border-radius: 10px;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+}
+
+.card-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex: 1;
+    border-radius: 10px;
+    border: 0;
+    background-color: #1A1423;
+    color: #ffffff;
+    padding: 0.5rem;
+}
+.card-buttons button:hover{
+    background-color: #35CE8D;
+    color: #1A1423;
+}
+.feature-card, .announcement-card{
+   background-color: white;
+   padding: 1rem;
+   border-radius: 10px;
+}
+.featured-user{
+    display: grid;
+    align-items: space-between;
+    grid-template-columns: auto 1fr;
+    padding: 0.5rem;
+    justify-content: space-between;
+    grid-template-areas: 
+    "avatar username"
+    "avatar usertitle"
+    ;
+}
+.featured-user .user-avatar{
+    grid-area: avatar;
+    padding-right: 0.5rem;
+}
+.featured-user .username{
+    grid-area: username;
+}
+.featured-user .usertitle{
+    grid-area: usertitle;
+    color: #888078;
+    font-size: 0.8rem;
+}
+.announcement-title{
+    font-weight: bold;
+}
+.announcement-excerpt{
+    font-size: 0.9rem;
+    color: #888078;
+}
+hr{
+    border: 1px solid #888078;
+    opacity: 0.2;
 }

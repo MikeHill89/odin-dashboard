@@ -6,60 +6,160 @@
     <title>Grid & Flex Dashboard</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/71ecd8aa7a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
    <div class="grid-wrapper">
     <header>
-        <input type="text" name="search" id="search-bar">
-        <div class="user-greeting">Hi there Morgan Oakley</div>
-        <div class="user-notifications">
-            bell icon + avatar + name
+       <div class="user-panel">
+            <div class="user-search">
+                <input type="text" name="search" placeholder="Enter your search" id="search-bar">
+            </div>
+            <div class="user-avatar"><img src="images/avatar.png"></img></div> 
+            <div class="user-notifications"><a href="#"><i class="fa-solid fa-bell"></i></a></div>
         </div>
-        <div class="toolbar">
-            <button>New</button>
-            <button>Upload</button>
-            <button>Share</button>
+       <div class="toolbar">
+            <a href="#"><button><span>New</span><i class="fa-solid fa-plus"></i></button></a>
+            <a href="#"><button><span>Upload</span><i class="fa-solid fa-upload"></i></button></a>
+            <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
         </div>
     </header>
     <nav>
-        <div class="logo"><i class="fa-brands fa-pied-piper fa-2xl"><span>My Name</span></i></div>
-        <hr>
-        <ul>
-            <a href="#">
-                <li class="fa-solid fa-home"><span>Home</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-contact-card"><span>Profile</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-envelope"><span>Messages</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-clock-rotate-left"><span>History</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-list-check"><span>Tasks</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-users"><span>Communities</span></li>
-            </a>
-        </ul> 
-        <hr>
-         <ul>
-            <a href="#">
-                <li class="fa-solid fa-cog"><span>Settings</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-circle-question"><span>Support</span></li>
-            </a>
-            <a href="#">
-                <li class="fa-solid fa-user-shield"><span>Privacy</span></li>
-            </a>
-        </ul> 
+        <div class="sticky-menu">
+            <div class="logo"><i class="fa-brands fa-pied-piper fa-2xl"><span>My Name</span></i></div>
+            <hr>
+            <ul>
+                <a href="#">
+                    <li class="fa-solid fa-home"><span>Home</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-contact-card"><span>Profile</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-envelope"><span>Messages</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-clock-rotate-left"><span>History</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-list-check"><span>Tasks</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-users"><span>Communities</span></li>
+                </a>
+            </ul> 
+            <hr>
+            <ul>
+                <a href="#">
+                    <li class="fa-solid fa-cog"><span>Settings</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-circle-question"><span>Support</span></li>
+                </a>
+                <a href="#">
+                    <li class="fa-solid fa-user-shield"><span>Privacy</span></li>
+                </a>
+            </ul>
+        </div>
     </nav>
-    <section class="projects">projects</section>
-    <aside class="sidebar">sidebar</aside>
-    <footer>footer</footer>
-   </div> 
+    <main>
+        <section class="projects">
+            <h2>Projects</h2>
+                <div class="project-card">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4 class="card-title">Lorem, ipsum.</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, temporibus!</p>
+                    <div class="card-buttons">
+                       <a href="#"><button><span>Share</span><i class="fa-solid fa-share-nodes"></i></button></a>
+                       <a href="#"><button><span>View</span><i class="fa-solid fa-eye"></i></button></a>
+                    </div>
+                </div>
+        </section>
+        <section class="sidebar">
+            <h2>Announcements</h2>
+            <div class="announcement-card">
+                <div class="announcement">
+                    <div class="announcement-title">Lorem ipsum.</div>
+                    <div class="announcement-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat?</div>
+                </div>
+                <hr>
+                <div class="announcement">
+                    <div class="announcement-title">Lorem ipsum.</div>
+                    <div class="announcement-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat?</div>
+                </div>
+                <hr>
+                <div class="announcement">
+                    <div class="announcement-title">Lorem ipsum.</div>
+                    <div class="announcement-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat?</div>
+                </div>
+            </div>
+            <h2>Featured</h2>
+            <div class="feature-card">
+                <div class="featured-user">
+                    <div class="user-avatar"><img src="images/avatar.png"></img></div> 
+                    <div class="username">@tegan</div>
+                    <div class="usertitle">World Peace Builder</div>
+                </div>
+                <div class="featured-user">
+                    <div class="user-avatar"><img src="images/avatar.png"></img></div> 
+                    <div class="username">@tegan</div>
+                    <div class="usertitle">World Peace Builder</div>
+                </div>
+                <div class="featured-user">
+                    <div class="user-avatar"><img src="images/avatar.png"></img></div> 
+                    <div class="username">@tegan</div>
+                    <div class="usertitle">World Peace Builder</div>
+                </div>
+                <div class="featured-user">
+                    <div class="user-avatar"><img src="images/avatar.png"></img></div> 
+                    <div class="username">@tegan</div>
+                    <div class="usertitle">World Peace Builder</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer><a href="https://github.com/MikeHill89">Made by <i class="fa-brands fa-github"></i> MikeHill89</a></footer>
+   </div>
 </body>
 </html>
