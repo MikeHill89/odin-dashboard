@@ -1,0 +1,102 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.grid-wrapper{
+    display: grid;
+    grid-template-columns:auto 1fr;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: 
+        "nav header"
+        "nav projects"
+        "nav sidebar"
+        "nav footer"
+    ;
+}
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-areas: 
+        "usernotifications"
+        "searchbar"
+        "userinfo"
+        "toolbar"
+        ;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: blue;
+}
+header input{
+    grid-area: searchbar;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 0;
+}
+header .user-greeting{
+    grid-area: userinfo;
+}
+header .toolbar{
+    grid-area: toolbar;
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: space-between;
+}
+header .toolbar button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-radius: 10px;
+    border: 0;
+    background-color: beige;
+    color: black;
+    padding: 0.5rem;
+}
+header .user-notifications{
+    grid-area: usernotifications;
+}
+nav{
+    grid-area: nav;
+    height: 100svh;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li, nav .logo{
+    color: white;
+}
+nav span{
+    display: none;
+}
+nav hr{
+    width: 100%;
+}
+.projects{
+    grid-area: projects;
+    background-color: brown;
+    padding: 1rem;
+}
+.sidebar{
+    grid-area:sidebar;
+    background-color: chocolate;
+    padding: 1rem;
+}
+footer{
+    grid-area: footer;
+    padding: 1rem;
+    height: auto; 
+    background-color: darkturquoise;
+}
